@@ -9,7 +9,8 @@ from app.catalog.loader import (
 )
 
 from app.retrieval.embedder import (
-    embedding_model,
+    embed_documents,
+    embed_text,
 )
 
 from app.core.config import (
@@ -105,9 +106,9 @@ def initialize_vector_store():
         )
 
     embeddings = (
-        embedding_model.encode(
+        embed_documents(
             documents
-        ).tolist()
+        )
     )
 
     collection.add(
@@ -127,10 +128,8 @@ def semantic_search(
     top_k=15,
 ):
 
-    embedding = (
-        embedding_model.encode(
-            query
-        ).tolist()
+    embedding = embed_text(
+        query
     )
 
     return collection.query(
