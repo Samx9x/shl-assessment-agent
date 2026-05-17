@@ -1,5 +1,6 @@
 fastapi==0.115.0
 uvicorn==0.30.6
+
 langgraph==0.2.14
 langchain==0.2.16
 langchain-core==0.2.43
@@ -29,7 +30,3 @@ orjson==3.11.9
 
 typing_extensions==4.15.0
 tqdm==4.67.3
-
-sentence-transformers==3.1.1
-torch==2.3.1
-transformers==4.44.2
